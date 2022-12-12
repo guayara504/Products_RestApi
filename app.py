@@ -6,13 +6,6 @@ app = Flask(__name__)
 from products import products
 
 
-
-@app.route("/ping", methods=["get"])
-def ping():
-    return jsonify({
-        "message":"pong"
-    })
-
 @app.route("/products",methods=["GET"])
 def getProducts():
     return jsonify({"products": products, "message": "Products List"})
